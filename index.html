@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JURISPERFORM : Portail déclaration TD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./index.css">
+</head>
+  <body>
+  <section class="section">
+    <div class="container">
+    <div class="block">
+        <h1 class="title">
+            Portail déclaration TD - LICENCE 1_ Semestre 2_ TD2
+        </h1>
+    </div>
+    <div class="block">
+        <p class="subtitle">
+            Bonjour à toutes et vous tous, 
+            Nous vous demandons de bien vouloir compléter le formulaire ci-après dès que vous avez vos horaires de TD.
+            Nous avons impérativement besoin de l'ensemble de ces informations pour pouvoir établir vos plannings à la Prépa.
+            Comptant sur votre réactivité et votre compréhension.
+        </p>
+    </div>    
+    <div class="block" id="divForm">
+        <div class="field">
+            <label class="label">Email : </label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-warning" type="email" placeholder="Votre email" value="">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <div class="block">
+                    <span class="icon is-small is-right">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+              </div>
+            </div>
+            <button class="button is-info is-light">Suivant</button>
+            <p class="help is-danger">Adresse mail inconnus</p>
+            <p class="help is-info">Vous avez déjà remplis le questionnaire, pour toutes modifications merci de nous contacter (jurisperform@gmail.com).</p>
+          </div>
+    </div>    
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+    <div class="block">
+        <h1 class="title">
+            Portail déclaration TD - LICENCE 1_ Semestre 2_ TD2
+        </h1>
+    </div>
+    <div class="block">
+        <p class="subtitle">
+          Merci de saissir dans le planning suivant vos heures de TD pour les matiéres suivante : 
+        </p>
+
+    </div>    
+    <div class="block is-8" id="divTab">
+    </div>    
+    <div class="agenda">
+      <div class="jourSemaine" id="jourSemaine">
+      </div>
+      <div class="jourSemaineSmall" id="jourSemaineSmall" >
+      </div>
+      <div class="horaires" id="horaires">
+      </div>
+    </div>
+    <div class="divNotGoing">
+      <button id="noTD" class="button is-danger is-light">Je n'assiste pas à ce TD.</button>
+      <h2 id="noTDLabel" hidden>TD auquelles je n'assiste pas :</h2>
+      <div class="block is-8" id="divNotGoingList">
+      </div>    
+    </div>
+    <div>
+      <textarea class="textarea" placeholder="Commentaire à destination de l'administration"></textarea>
+    </div>
+    <div class="buttValid">
+      <button class="button is-primary" id="savPlanning" disabled>Enregistrer</button>
+    </div>
+  </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+.button
+{
+    margin: 0.2em;
+
+    resize: none
+}
+
+.jourSemaine{
+    display:flex;
+    flex-direction: row;
+}
+.jourSemaineSmall{
+    display:none;
+    flex-direction: row;
+}
+
+.horaire{
+    display:flex;
+    flex-direction: row;
+    
+    
+}
+.day, .date {
+    padding: 0.2em,0.2em,0.2em,0.2em,;
+    margin: 2em,2em,2em,1em;
+    width: 20em;
+
+    text-align: center;
+    margin-left: 2;
+}
+.btnDate {
+    white-space: normal;
+    font-size: 0.8em;
+    width: 10em;
+}
+
+
+@media (max-width: 600px) {
+    .jourSemaine {
+      display: none;
+    }
+    .jourSemaineSmall {
+        display: flex ;
+      }
+
+  }
