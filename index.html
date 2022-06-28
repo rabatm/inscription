@@ -68,14 +68,40 @@
       <div class="horaires" id="horaires">
       </div>
     </div>
-    <div class="divNotGoing">
-      <button id="noTD" class="button is-danger is-light">Je n'assiste pas à ce TD.</button>
-      <h2 id="noTDLabel" hidden>TD auquelles je n'assiste pas :</h2>
-      <div class="block is-8" id="divNotGoingList">
-      </div>    
+    <div class="card">
+      <div class="card-content ">
+        <div id="horairePerso ">
+          <h2>Si vous ne trouvé pas le crénau de votre TD dans le planing merci de le renseigner :  </h2>
+          <div class="horairePerso block is-8">
+            <div>Jour :</div> 
+            <div class="select">
+              <select>
+                <option>Lundi</option>
+                <option>Mardi</option>
+              </select>
+            </div>
+            <p> début :</p> 
+             <input class="input horaireInput" type="time" min="09:00" max="18:00">
+             <p> heure de fin :</p> 
+              <input class="input horaireInput" type="time" min="09:00" max="18:00">
+          </div>
+        <div class="divNotGoing">
+          <button id="noTD" class="button is-danger is-light">Je n'assiste pas à ce TD.</button>
+          <h2 id="noTDLabel" hidden>TD auquelles je n'assiste pas :</h2>
+          <div class="block is-8" id="divNotGoingList">
+          </div>    
+        </div>
+      </div>
     </div>
-    <div>
-      <textarea class="textarea" placeholder="Commentaire à destination de l'administration"></textarea>
+    <div class="card">
+      <div class="card-header">
+        <p class="card-header-title">
+          <h2>Commentaire destiné de l'administration </h2>
+        </p>
+      </div>
+      <div class="card-content">
+            <textarea class="textarea" placeholder="Commentaire à destination de l'administration"></textarea>
+      </div>
     </div>
     <div class="buttValid">
       <button class="button is-primary" id="savPlanning" disabled>Enregistrer</button>

@@ -14,11 +14,15 @@
     flex-direction: row;
 }
 
-.horaire{
+.horaire, .horairePerso{
     display:flex;
     flex-direction: row;
     
     
+}
+
+.horaireInput{
+    width: 15%;
 }
 .day, .date {
     padding: 0.2em,0.2em,0.2em,0.2em,;
@@ -31,7 +35,8 @@
 .btnDate {
     white-space: normal;
     font-size: 0.8em;
-    width: 10em;
+    min-width: 4em;
+    max-width: 10em;
 }
 
 
