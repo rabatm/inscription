@@ -33,7 +33,6 @@ function setNextTD() {
         if (planning.length != TDs.length){
         do {
         currentTD=currentTD+1        
-        console.log(planning[currentTD])
         }
         while (planning[currentTD]!=undefined)
 
@@ -61,7 +60,9 @@ function updateTD(id) {
         if(endForm)
         {
             planning[currentTD]=id
-            $("#"+id).html(`<i class="fa-solid fa-circle-minus"> </i>&nbsp;<p>`+ TDs[currentTD].slice(0, 12)+ `</p>` + ``)
+            if(id[0] != 'p') {
+            $("#"+id).html(`<i class="fa-solid fa-circle-minus"> </i>&nbsp;<p>`+ TDs[currentTD].slice(0, 12)+ `</p>` + ``)}
+            
             $("#"+id).addClass("is-success")
             $("#" + currentTD).addClass("is-success")
             setNextTD();
@@ -119,18 +120,26 @@ $(".TD").addClass( "button is-info is-rounded" );
 
 
 $('#savHorairePerso').click(function() {
-    const start = $('#startPerso')[0].value
-    const end = $('#endPerso')[0].value
+    const start = $('#startPerso')[0].value.replace(":","h")
+    const end = $('#endPerso')[0].value.replace(":","h")
     const day = $('#selectDayPerso')[0].value
+    const idHTML ='p' + day+start+end
+    if(endForm)
+    {
+        $('#divHperso').append(`<div class="block is-1" id="${idHTML}">
+            <div class="notification is-primary">
+            <button class="delete"></button>${day} de ${start}  à ${end} - ${TDs[currentTD]}
+            </div>
+            </div>`)
 
-
-$('#divHperso').append(`<div class="block is-1" id="divMyTime">
-<div class="notification is-primary">
-<button class="delete"></button>
-${day} de ${start}  à ${end} - TD DROIT CONSTITUTIONNEL Vème REPUBLIQUE
-</div>
-</div>`)
-
+        $(`#p${day+start+end}`).click(function () {
+            updateTD(this.id)
+            console.log(this.id)
+            $( '#' + this.id).remove();
+        })
+            updateTD(idHTML)
+            $('#divHperso').prop("hidden", false);
+    }
 })
 
 
@@ -139,13 +148,11 @@ $('#noTD').click(function() {
 if(endForm) {
     $('#divNotGoingList').append(
         `<button id='NOTD${currentTD}' class="noBtnTD button is-success"></button>`)
-    
     $('#'+currentTD+'noTD').addClass( "button" ).addClass( "" );
     $('#noTDLabel').prop("hidden", false);
+
     updateTD("NOTD"+currentTD)
-    noTD++
-    console.log(noTD)
-    
+    noTD++ 
     
     $('.noBtnTD').click(function() {
         noTD--
