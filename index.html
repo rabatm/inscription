@@ -100,14 +100,48 @@
                 <textarea class="textarea" placeholder="Commentaire à destination de l'administration"></textarea>
             </div>
         </div>
-    </div>
+      
         <footer class="card-footer">
           <p class="card-footer-item">      
-            <div class="buttValid">
+            <div class="btnUndo">
                 <button class="button is-warning" id="unSave">Annuler</button>
             </div>
-            <div class="buttValid">
+            <div class="btnSave">
                     <button class="button is-primary" id="savPlanning" disabled>Enregistrer</button>
+            </div>
+          </p>
+        </footer>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <p class="subtitle">
+           Merci de vérifier vos réponses avant de valider définitivement votre planing. </p>
+        </div>
+        <div class="card-content">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>TD</th>
+                    <th>JOUR</th>
+                    <th>Début</th>
+                    <th>Fin</th>
+                  </tr>
+                </thead>
+                <tbody id="tRecap">
+                </tbody>
+            </table>
+            <label class="checkbox">
+                <input type="checkbox" id="verifOk">
+                Je certifie avoir bien vérifié mes horaires.
+            </label>
+        </div>
+        <footer class="card-footer">
+          <p class="card-footer-item">      
+            <div class="btnMod">
+                <button class="button is-warning" id="unSave">Modifier</button>
+            </div>
+            <div class="btnCommit">
+                    <button class="button is-primary" id="commitPlanning" disabled>Enregistrer</button>
             </div>
           </p>
         </footer>
