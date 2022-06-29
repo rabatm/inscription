@@ -1,11 +1,10 @@
 .button
 {
     margin: 0.2em;
-
     resize: none
 }
 
-.jourSemaine{
+.jourSemaine, .horairePerso{
     display:flex;
     flex-direction: row;
 }
@@ -13,16 +12,18 @@
     display:none;
     flex-direction: row;
 }
+.card-header-title {
+    text-align: center;
+}
 
 .horaire, .horairePerso{
     display:flex;
     flex-direction: row;
-    
-    
+    justify-content: space-around;
 }
-
-.horaireInput{
-    width: 15%;
+.buttHoraireAdd{
+    align-self: flex-end;
+    padding-bottom: 0.5em;
 }
 .day, .date {
     padding: 0.2em,0.2em,0.2em,0.2em,;
@@ -38,7 +39,13 @@
     min-width: 4em;
     max-width: 10em;
 }
+.horaireInput {
+    width:12em;
+}
 
+.horairePerso {
+    padding: 2em,2em,2em,2em;
+}
 
 @media (max-width: 600px) {
     .jourSemaine {

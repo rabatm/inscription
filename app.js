@@ -76,9 +76,8 @@ function updateTD(id) {
         setNextTD();
         
         $("#"+id).html(`<i class="fa-solid fa-circle-plus"></i>`)
-        $("#"+id).removeClass("is-success is-light")
+        $("#"+id).removeClass("is-success")
         $("#" + currentTD).removeClass( "is-warning" );
-        $("#" + currentTD).removeClass( "is-light" );
         $("#"+ currentTD).addClass("is-warning is-rounded")
 
         $('#savPlanning').prop("disabled", true);
@@ -100,6 +99,7 @@ $.map(times, (horaire,ihoraire) => {
         if (flagIsNotUpdateDay){
             $('#jourSemaine').append(`<div class="day"><h3>${day}</h3></div>`)
             $('#jourSemaineSmall').append(`<div class="day"><h3>${day.slice(0,1)}</h3></div>`)
+            $('#selectDayPerso').append(`<option>${day}</option>`)
         }
             let ihtml='D'+ ihoraire.toString()+ 'T' + (iday.toString())
             dayHTML+=`<div class="date" ><button class="btnDate" id="${ihtml}"><i class="fa-solid fa-circle-plus"></i></button></div>`
@@ -110,14 +110,32 @@ $.map(times, (horaire,ihoraire) => {
 })
 $.map(TDs, (td,iTd) => {
     $('#divTab').append(
-    `<button id='${iTd}' class="TD">${iTd} - ${td}</button>`)
+    `<button id='${iTd}' class="TD">${td}</button>`)
 })
 
 $("#" + currentTD).addClass("is-warning")
 
 $(".TD").addClass( "button is-info is-rounded" );
 
+
+$('#savHorairePerso').click(function() {
+    const start = $('#startPerso')[0].value
+    const end = $('#endPerso')[0].value
+    const day = $('#selectDayPerso')[0].value
+
+
+$('#divHperso').append(`<div class="block is-1" id="divMyTime">
+<div class="notification is-primary">
+<button class="delete"></button>
+${day} de ${start}  à ${end} - TD DROIT CONSTITUTIONNEL Vème REPUBLIQUE
+</div>
+</div>`)
+
+})
+
+
 $('#noTD').click(function() {
+
 if(endForm) {
     $('#divNotGoingList').append(
         `<button id='NOTD${currentTD}' class="noBtnTD button is-success"></button>`)
